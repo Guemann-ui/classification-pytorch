@@ -11,7 +11,7 @@ from sklearn.model_selection import KFold
 from src.datasets import Dataset
 from src.cnn import Classifier
 from src.config import *
-from src.train import train_classifier
+from train import train_classifier
 from src.test import test_classifier
 from src.load_ckpts import load_checkpoint
 
