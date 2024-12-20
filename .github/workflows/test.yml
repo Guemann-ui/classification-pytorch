@@ -58,9 +58,10 @@ jobs:
       # Train CNN Model with MLflow
       - name: Train CNN with MLflow
         env:
-          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI}}
-          #MLFLOW_TRACKING_TOKEN: ${{ secrets.MLFLOW_TRACKING_TOKEN }}
+          SECRET_HOST: ${{ secrets.SECRET_HOST }}
+          SECRET_PORT: ${{ secrets.SECRET_PORT }}
+          SECRET_USERNAME: ${{ secrets.SECRET_USERNAME }}
+          SECRET_PPK_VALUE: ${{ secrets.SECRET_PPK_VALUE }}
         run: |
-          echo "MLFLOW_TRACKING_URI=${{ secrets.MLFLOW_TRACKING_URI}}"
           mkdir -p /home/runner/work/classification-pytorch/classification-pytorch/plots
           python3 train.py --data_path ./data/train/ --epochs 50 --learning_rate 0.001 --model_dir ./models --plot_dir ./plots
